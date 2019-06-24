@@ -11,7 +11,7 @@
 #sudo yum install wget -y
 
 
-if [ -z "$STY" ]; then exec screen -dm -S dsScrn /bin/bash "$0"; fi
+#if [ -z "$STY" ]; then exec screen -dm -S dsScrn /bin/bash "$0"; fi
 
 # MOUNT THE DISK
 sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
@@ -42,6 +42,11 @@ echo ". ~/miniconda/etc/profile.d/conda.sh" >> ~/.bashrc
 sudo chmod 777 ~/miniconda/etc/profile.d/conda.sh
 #source ~/.bashrc
 . ~/miniconda/etc/profile.d/conda.sh
+
+# GET CODE SERVER
+
+wget https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz
+gunzip code-server1.1156-vsc1.33.1-linux-x64.tar.gz .
 
 # SET UP VIRTUALENV
 conda env create -f dspy.yaml
