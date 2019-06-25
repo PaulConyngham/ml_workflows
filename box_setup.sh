@@ -1,4 +1,4 @@
-#! /bin/bash
+# /bin/bash
 
 
 # NOTE: THIS WORKS BEST WITH A VM INSTANTIATED WITH UBUNTU 18.04 LTS
@@ -48,6 +48,10 @@ sudo chmod 777 ~/miniconda/etc/profile.d/conda.sh
 wget https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz
 #gunzip code-server1.1156-vsc1.33.1-linux-x64.tar.gz .
 tar -xvzf code-server1.1156-vsc1.33.1-linux-x64.tar.gz
+
+#COPY ACROSS DATA FOR DEMO
+gsutil cp gs://demo-sml/craigslistVehiclesFull.csv .
+gsutil cp gs://demo-sml/craigslistVehicles.csv .
 
 # SET UP VIRTUALENV
 conda env create -f dspy.yaml
