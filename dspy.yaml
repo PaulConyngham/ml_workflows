@@ -17,6 +17,7 @@ dependencies:
   - xarray>=0.12.1
   - pip>=19.1
   - ffmpeg
+  - modin
   - pytest>=4.5.0
   - mplcursors>=0.2.1
   - tensorflow>=1.13
