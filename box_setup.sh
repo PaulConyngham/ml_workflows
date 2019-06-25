@@ -46,7 +46,8 @@ sudo chmod 777 ~/miniconda/etc/profile.d/conda.sh
 # GET CODE SERVER
 
 wget https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz
-gunzip code-server1.1156-vsc1.33.1-linux-x64.tar.gz .
+#gunzip code-server1.1156-vsc1.33.1-linux-x64.tar.gz .
+tar -xvzf code-server1.1156-vsc1.33.1-linux-x64.tar.gz
 
 # SET UP VIRTUALENV
 conda env create -f dspy.yaml
